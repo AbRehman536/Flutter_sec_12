@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +24,7 @@ class LoginPage extends StatelessWidget {
         child: Column(children: [
           Text("Login Page",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
           TextField(
+            controller: emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               fillColor: Colors.white,
@@ -30,6 +38,7 @@ class LoginPage extends StatelessWidget {
           ),
           SizedBox(height: 10,),
           TextField(
+            controller: passwordController,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
                 fillColor: Colors.white,
@@ -47,7 +56,23 @@ class LoginPage extends StatelessWidget {
           SizedBox(
             width: 400,
             height: 50,
-            child: ElevatedButton(onPressed: (){},
+            child: ElevatedButton(onPressed: (){
+              if(emailController.text.isEmpty){
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("Email is Empty")));
+                return ;
+              }
+              if(passwordController.text.isEmpty){
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("Password is Empty")));
+                return ;
+              }
+              if(passwordController.text.length < 8){
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("Password should be more than 8 digits")));
+                return;
+              }
+            },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
@@ -57,7 +82,8 @@ class LoginPage extends StatelessWidget {
           ),
           Row(children: [
             Text("Don't have account ?"),
-            TextButton(onPressed: (){}, child: Text("Sign Up"))
+            TextButton(onPressed: (){
+            }, child: Text("Sign Up"))
           ],)
         ],),
       ),
