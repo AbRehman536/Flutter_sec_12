@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sec_12/app_bar.dart';
 import 'package:flutter_sec_12/images.dart';
+import 'package:flutter_sec_12/login_page.dart';
 import 'package:flutter_sec_12/row_column.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ImagesDemo(),
+      home: LoginPage(),
     );
   }
 }

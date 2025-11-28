@@ -22,7 +22,6 @@ class ImagesDemo extends StatelessWidget {
                 ,width: 500, height: 400, fit: BoxFit.fill,),
               ),
               Image.asset("assets/images/Frame.png",
-              
                 fit: BoxFit.fill,
               ),
             ],
