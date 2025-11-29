@@ -5,7 +5,9 @@ import 'package:flutter_sec_12/dialogox.dart';
 import 'package:flutter_sec_12/images.dart';
 import 'package:flutter_sec_12/listtile_demo.dart';
 import 'package:flutter_sec_12/login_page.dart';
+import 'package:flutter_sec_12/multi_selection.dart';
 import 'package:flutter_sec_12/row_column.dart';
+import 'package:flutter_sec_12/single_selection.dart';
 
 import 'OTP.dart';
 
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ListtileDemo(),
+      home: MultiSelectionDemo(),
     );
   }
 }
