@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sec_12/app_bar.dart';
+import 'package:flutter_sec_12/bottomBar.dart';
 import 'package:flutter_sec_12/bottom_sheet.dart';
 import 'package:flutter_sec_12/cupertino_switch.dart';
+import 'package:flutter_sec_12/curved_bottombar.dart';
 import 'package:flutter_sec_12/date_time_picker.dart';
 import 'package:flutter_sec_12/dialogox.dart';
 import 'package:flutter_sec_12/girdView_demo/gridview_builder.dart';
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: TabBarDemo(),
+      home: CurvedBarDemo(),
     );
   }
 }
