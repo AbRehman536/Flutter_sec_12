@@ -10,6 +10,7 @@ class DateTimePickerDemo extends StatefulWidget {
 
 class _DateTimePickerDemoState extends State<DateTimePickerDemo> {
   DateTime selectedDate = DateTime.now();
+  TimeOfDay? selectedTime;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +35,23 @@ class _DateTimePickerDemoState extends State<DateTimePickerDemo> {
                   selectedDate = val!;
                 });
           });
-        }, child: Text("Show Date Picker"))
+        }, child: Text("Show Date Picker")),
+        Text(
+          selectedTime == null ? "No time Selected" :
+          selectedTime!.format(context).toString(),
+          style: TextStyle(
+              fontWeight: FontWeight.w700,fontSize: 30
+          ),
+        ),
+        ElevatedButton(onPressed: (){
+          showTimePicker(
+              context: context,
+              initialTime: TimeOfDay.now()).then((val){
+                setState(() {
+                  selectedTime = val;
+                });
+          });
+        }, child: Text("Show Time Picker"))
 
       ],),
 
