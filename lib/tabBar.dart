@@ -20,7 +20,7 @@ class TabBarDemo extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: TabBar(
                     labelColor: Colors.white,
-                    unselectedLabelColor: Colors.grey,
+                    unselectedLabelColor: Colors.white38,
                     indicatorSize: TabBarIndicatorSize.tab,
                     indicator: BoxDecoration(
                       color: Colors.blue,
