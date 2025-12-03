@@ -15,14 +15,21 @@ import 'package:flutter_sec_12/listtile_demo.dart';
 import 'package:flutter_sec_12/login_page.dart';
 import 'package:flutter_sec_12/multi_selection.dart';
 import 'package:flutter_sec_12/pageView.dart';
+import 'package:flutter_sec_12/passing_parameters/screen_a.dart';
+import 'package:flutter_sec_12/provider/screen_1.dart';
+import 'package:flutter_sec_12/provider/user.dart';
 import 'package:flutter_sec_12/row_column.dart';
 import 'package:flutter_sec_12/single_selection.dart';
 import 'package:flutter_sec_12/tabBar.dart';
+import 'package:provider/provider.dart';
 
 import 'OTP.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context)=> UserProvider()),
+  ],
+  child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -52,7 +59,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: DrawerMenu(),
+      home: Screen1(),
     );
   }
 }
