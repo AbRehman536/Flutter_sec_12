@@ -41,6 +41,7 @@ dependencies:
   curved_navigation_bar: ^1.0.6
   provider: ^6.1.5+1
   google_maps_flutter: ^2.14.0
+  google_fonts: ^6.3.3
 
 
 dev_dependencies:
